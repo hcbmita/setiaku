@@ -428,4 +428,62 @@ footer {
   }
 }
 
+
+/* Responsif untuk semua halaman */
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-left img {
+    width: 80%;
+    height: auto;
+  }
+
+  .hero-right h1 {
+    font-size: 1.8rem;
+  }
+
+  .menu-item img, .menu-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  section, .menu, .maps, .pemesanan {
+    padding: 10px;
+  }
+
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  input, textarea, button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
 }
