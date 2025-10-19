@@ -252,7 +252,7 @@ nav a.active {
   margin: 8px 0 15px 0;
 }
 
-/* RESPONSIVE */
+/* RESPONSIVE UNTUK MENU */
 @media (min-width: 768px) {
   .menu-list {
     flex-direction: row;
@@ -269,7 +269,6 @@ nav a.active {
     width: 300px;
   }
 }
-
 
 /* === Footer di bawah halaman === */
 footer {
@@ -310,3 +309,60 @@ footer {
   color: #333;
 }
 
+/* ======== TAMBAHAN RESPONSIVE UNTUK HP ======== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 20px;
+    background: linear-gradient(to bottom, #dbe3ff 50%, #8fa7f5 50%);
+  }
+
+  .hero-left {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .big-circle {
+    width: 80%;
+    height: auto;
+  }
+
+  .small-circle {
+    position: static;
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+
+  .hero-right {
+    text-align: center;
+  }
+
+  .hero-right h1 {
+    font-size: 2rem;
+  }
+
+  .hero-right p {
+    font-size: 1rem;
+  }
+
+  .floating-contact {
+    width: 200px;
+    font-size: 12px;
+    right: 10px;
+    bottom: 10px;
+  }
+}
