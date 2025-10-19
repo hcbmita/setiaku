@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemesanan | Rumah Makan Setia</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f7f8fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ==== NAVBAR ==== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #5d7be6 50%;
+      color: rgb(13, 13, 13);
+      padding: 15px 30px;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+    .navbar nav a {
+      color: rgb(255, 249, 249);
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: 500;
+    }
+    .navbar nav a:hover {
+      text-decoration: none;
+    }
+    nav a:hover,
+    nav a.active {
+    color: #0c0c0c;
+    }
+
+    /* ==== FORM ==== */
+    main {
+      background: white;
+      padding: 25px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px; /* biar di tengah dan rapi */
+    }
+    h2 {
+      color: #363595;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    h3 {
+      color: #333;
+      margin-top: 25px;
+    }
+    .menu-item {
+      margin-bottom: 10px;
+    }
+    select, input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+      width: 100%;
+    }
+    button.add-btn {
+      background-color: #8998f7;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 8px;
+    }
+    button.add-btn:hover {
+      background-color: #0056b3;
+    }
+    button[type="submit"] {
+      background-color: #06bd1e;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      margin-top: 20px;
+      cursor: pointer;
+      width: 100%;
+    }
+    button[type="submit"]:hover {
+      background-color: #031342;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">🍽️ Rumah Makan Setia</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="Lokasi.html">Maps</a>
+        <a href="pemesanan.html" class="active">Pemesanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- FORM PEMESANAN -->
+  <main>
+    <h2>🧾 Formulir Pemesanan</h2>
+    <form id="orderForm">
+      <label for="namaPemesan">Nama Pemesan:</label>
+      <input type="text" id="namaPemesan" placeholder="Masukkan nama Anda" required>
+
+      <h3>🍛 Pilih Makanan</h3>
+      <div id="foodContainer">
+        <div class="menu-item">
+          <select required>
+            <option value="">-- Pilih Menu Makanan --</option>
+            <option value="Mie Goreng Kering">Mie Goreng Kering</option>
+            <option value="Mie Goreng Hokian">Mie Goreng Hokian</option>
+            <option value="Mie Goreng Jakarta">Mie Goreng Jakarta</option>
+            <option value="Mie Pangsit">Mie Pangsit</option>
+            <option value="Mie Kuah">Mie Kuah</option>
+            <option value="Nasi Goreng Jakarta">Nasi Goreng Jakarta</option>
+            <option value="Nasi Goreng Merah">Nasi Goreng Merah</option>
+            <option value="Nasi Goreng Yong Ciu">Nasi Goreng Yong Ciu</option>
+            <option value="Nasi Cap Cay">Nasi Cap Cay</option>
+            <option value="Nasi Putih">Nasi Putih</option>
+            <option value="Bihun Goreng Hokian">Bihun Goreng Hokian</option>
+            <option value="Bihun Kuah">Bihun Kuah</option>
+            <option value="Bihun Goreng Kering">Bihun Goreng Kering</option>
+            <option value="Cap Cay Goreng">Cap Cay Goreng</option>
+            <option value="Cap Cay Kuah">Cap Cay Kuah</option>
+          </select>
+          <input type="number" placeholder="Jumlah" min="1" required>
+        </div>
+      </div>
+      <button type="button" class="add-btn" id="addFood">+ Tambah Makanan</button>
+
+      <h3>🥤 Pilih Minuman</h3>
+      <div id="drinkContainer">
+        <div class="menu-item">
+          <select required>
+            <option value="">-- Pilih Menu Minuman --</option>
+            <option value="Es Teh Manis">Es Teh Manis</option>
+            <option value="Le Mineral Tengah">Le Mineral Tengah</option>
+            <option value="Le Mineral Kecil">Le Mineral Kecil</option>
+            <option value="Air Gelas">Air Gelas</option>
+          </select>
+          <input type="number" placeholder="Jumlah" min="1" required>
+        </div>
+      </div>
+      <button type="button" class="add-btn" id="addDrink">+ Tambah Minuman</button><br>
+
+      <label for="catatan">📝 Catatan:</label>
+      <textarea id="catatan" placeholder="Tambahkan catatan jika ada..."></textarea>
+
+      <button type="submit">Pesan Sekarang</button>
+    </form>
+  </main>
+
+  <script>
+    const hargaMenu = {
+      "Mie Goreng Kering": 30000,
+      "Mie Goreng Hokian": 30000,
+      "Mie Goreng Jakarta": 30000,
+      "Mie Pangsit": 22000,
+      "Mie Kuah": 18000,
+      "Nasi Goreng Jakarta": 30000,
+      "Nasi Goreng Merah": 30000,
+      "Nasi Goreng Yong Ciu": 35000,
+      "Nasi Cap Cay": 30000,
+      "Nasi Putih": 5000,
+      "Bihun Goreng Hokian": 30000,
+      "Bihun Kuah": 25000,
+      "Bihun Goreng Kering": 30000,
+      "Cap Cay Goreng": 35000,
+      "Cap Cay Kuah": 35000,
+      "Es Teh Manis": 5000,
+      "Le Mineral Tengah": 5000,
+      "Le Mineral Kecil": 3000,
+      "Air Gelas": 1000
+    };
+
+    const formatRupiah = (angka) =>
+      "Rp " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
+    document.getElementById("addFood").addEventListener("click", () => {
+      const container = document.getElementById("foodContainer");
+      const newItem = container.firstElementChild.cloneNode(true);
+      newItem.querySelector("select").value = "";
+      newItem.querySelector("input").value = "";
+      container.appendChild(newItem);
+    });
+
+    document.getElementById("addDrink").addEventListener("click", () => {
+      const container = document.getElementById("drinkContainer");
+      const newItem = container.firstElementChild.cloneNode(true);
+      newItem.querySelector("select").value = "";
+      newItem.querySelector("input").value = "";
+      container.appendChild(newItem);
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const nama = document.getElementById("namaPemesan").value;
+      const catatan = document.getElementById("catatan").value || "-";
+      let totalBayar = 0;
+      let rincian = "";
+
+      const semuaMenu = [...document.querySelectorAll("#foodContainer .menu-item"), ...document.querySelectorAll("#drinkContainer .menu-item")];
+      semuaMenu.forEach((item, i) => {
+        const menu = item.querySelector("select").value;
+        const jumlah = parseInt(item.querySelector("input").value) || 0;
+        if (menu && jumlah > 0) {
+          const harga = hargaMenu[menu] || 0;
+          const subtotal = harga * jumlah;
+          totalBayar += subtotal;
+          rincian += `${i + 1}. ${menu} (${jumlah}x) = ${formatRupiah(subtotal)}\n`;
+        }
+      });
+
+      if (!rincian) {
+        alert("⚠️ Silakan pilih minimal satu menu sebelum memesan!");
+        return;
+      }
+
+      alert(`🍽️ Terima kasih, ${nama}!\n\nRincian Pesanan:\n──────────────────────\n${rincian}──────────────────────\n💵 Total Pembayaran = ${formatRupiah(totalBayar)}\n📝 Catatan: ${catatan}\n──────────────────────\nPesanan Anda sedang diproses. 😊`);
+
+      this.reset();
+      document.getElementById("foodContainer").innerHTML = document.getElementById("foodContainer").firstElementChild.outerHTML;
+      document.getElementById("drinkContainer").innerHTML = document.getElementById("drinkContainer").firstElementChild.outerHTML;
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Rumah Makan Setia | Dibuat oleh <strong>Yuhuyyy</strong></p>
+  </footer>
+</body>
+</html>

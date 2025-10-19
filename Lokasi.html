@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peta | Rumah Makan Setia</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Tambahkan library peta Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="navbar">
+      <div class="logo">🍽️ Rumah Makan Setia</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="Lokasi.html" class="active">Maps</a>
+        <a href="Pemesanan.html">Pemesanan</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BAGIAN PETA -->
+  <main style="text-align:center; padding:20px;">
+    <h2 style="color:#004ba0; margin-bottom:20px;">Lokasi</h2>
+
+    <!-- Elemen untuk menampilkan peta -->
+    <div id="map" style="height:400px; width:90%; max-width:800px; margin:auto; border-radius:10px; overflow:hidden; box-shadow:0 4px 10px rgba(0,0,0,0.2);"></div>
+  </main>
+
+  <script>
+    // Inisialisasi peta
+    var map = L.map('map').setView([-6.121341, 120.460623], 17); // Ganti dengan koordinat lokasi kamu
+
+    // Tambahkan layer peta dari OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    // Tambahkan marker lokasi Rumah Makan Setia
+    var marker = L.marker([-6.121341, 120.460623]).addTo(map);
+    marker.bindPopup("<b>Rumah Makan Setia</b><br>Jl. Bina Karya No 10, Benteng, Selayar").openPopup();
+  </script><br><br>
+  
+  <footer>
+    <p>&copy; 2025 Rumah Makan Setia | Dibuat oleh <strong>Yuhuyyy</strong></p>
+  </footer>
+</body>
+</html>
+
+
